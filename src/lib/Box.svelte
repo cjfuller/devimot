@@ -11,8 +11,8 @@
   export let onEnter: () => void;
   export let id: string | undefined = undefined;
   export let boxSize: number = 65;
-  export let fontSize: number = 38;
-  export let tweakVertical: number = 5;
+  export let fontSize: number = 42;
+  export let tweakVertical: number = 7;
   export let unknownColor: string = "#111";
   const idForLabel = uuidv4();
   $: cssVars = `--box-size:${boxSize}px;--font-size:${fontSize}px;--tweak:${tweakVertical}px;--unknown:${unknownColor};`;

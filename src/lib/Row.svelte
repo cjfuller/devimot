@@ -7,7 +7,7 @@
   export let colors: Colors;
   export let handleGuess: (guess: string) => void;
   export let boxSize: number = 65;
-  export let fontSize: number = 38;
+  export let fontSize: number = 42;
   export let tweakVertical: number = 5;
 
   import Box from "./Box.svelte";
