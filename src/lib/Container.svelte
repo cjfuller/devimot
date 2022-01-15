@@ -43,11 +43,13 @@
     position: relative;
     max-height: 90vh;
     min-height: 75vh;
-    min-width: 350px;
+    min-width: 250px;
     max-width: 400px;
+    width: 100%;
   }
   .rule {
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
     border-bottom: 1px solid #555;
     margin-top: 4px;
     margin-bottom: 4px;

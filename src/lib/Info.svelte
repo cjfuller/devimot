@@ -75,7 +75,8 @@
     border-bottom: 1px solid #555;
     margin-top: 4px;
     margin-bottom: 4px;
-    min-width: 350px;
+    min-width: 250px;
     max-width: 400px;
+    width: 100%;
   }
 </style>
