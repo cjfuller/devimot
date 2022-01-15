@@ -85,6 +85,8 @@
 
 <style>
   .box {
+    opacity: 1;
+    -webkit-opacity: 1;
     font-family: "Concourse C6 Tab", sans-serif;
     font-size: var(--font-size);
     padding-bottom: var(--tweak);
