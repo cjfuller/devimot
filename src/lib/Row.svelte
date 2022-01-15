@@ -12,10 +12,10 @@
 
   import Box from "./Box.svelte";
   const modifyGuess = (at: number, newGuess: string | null) => {
-    if (newGuess === null || newGuess === "") {
+    if (newGuess == null || newGuess === "") {
       newGuess = " ";
     }
-    guess = guess.slice(0, at) + newGuess[0] + guess.slice(at + 1, 5);
+    guess = guess.slice(0, at) + newGuess[0].toLowerCase() + guess.slice(at + 1, 5);
   };
 
   const handleEnter = () => {

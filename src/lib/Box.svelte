@@ -26,6 +26,7 @@
     if (letter === "" || letter === " ") {
       letter = null;
     }
+    letter = letter?.toLowerCase();
     if (letter !== null) {
       onLetterChange(letter);
       const inputs = document.getElementsByTagName("input");
@@ -69,6 +70,8 @@
 </span>
 <input
   aria-labelledby={idForLabel}
+  autocapitalize="off"
+  autocomplete="off"
   style={cssVars}
   {id}
   class={`box dark-mode ${status} ${colors}`}
