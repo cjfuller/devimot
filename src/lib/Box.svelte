@@ -103,6 +103,7 @@
     margin-left: 2px;
     margin-right: 2px;
     text-align: center;
+    overflow-x: visible;
   }
   .inconnu {
     background-color: var(--unknown);
