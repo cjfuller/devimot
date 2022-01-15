@@ -58,6 +58,7 @@
         status={statusForLetter(state, letter)}
         boxSize={35}
         fontSize={18}
+        tweakVertical={4}
         onEnter={() => null}
         onLetterChange={(l) => null}
         {colors}
