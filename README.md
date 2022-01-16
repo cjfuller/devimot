@@ -1,5 +1,5 @@
 # Devimot
-Version français de [Wordle](https://www.powerlanguage.co.uk/wordle/), un jeu de mots quotidien par Josh Wardle.
+Version française de [Wordle](https://www.powerlanguage.co.uk/wordle/), un jeu de mots quotidien par Josh Wardle.
 
 https://devimot.cjf.io
 
