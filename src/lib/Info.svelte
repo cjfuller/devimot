@@ -8,7 +8,7 @@
 
 <Container {onClose} title="Comment jouer?">
   <div class="body">
-    <p>Devinez le mot caché dans 6 essais.</p>
+    <p>Devinez le mot caché en 6 essais.</p>
 
     <p>
       Chaque essai doit être un mot valide de 5 lettres. Appuyez sur «Enter» pour soumettre un mot.
