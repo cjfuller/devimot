@@ -5,8 +5,10 @@
   import Board from "../lib/Board.svelte";
   import Info from "../lib/Info.svelte";
   import SettingsPage from "../lib/Settings.svelte";
+  import Statistics from "../lib/Statistics.svelte";
   let page: "info" | "board" | "settings" | "stats" = "board";
   let settings: Settings = loadSettings();
+  let state: State = newState();
   const changeColors = (newColors: Colors) => {
     settings = {
       ...settings,
@@ -45,7 +47,9 @@
         <button disabled class="button button-disabled" aria-hidden="true" />
         <h1 class="title">Devimot</h1>
         <div>
-          <button class="button" aria-labelledby="stats-label">
+          <button class="button" aria-labelledby="stats-label" on:click={() => {
+              page = "stats";
+          }}>
             <span id="stats-label" hidden>Statistiques</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -84,9 +88,9 @@
         </div>
       </div>
       <div class="rule" />
-      <Board state={newState()} {colors} onVictory={() => null} onDefeat={() => null} />
+      <Board bind:state={state} {colors} onVictory={() => null} onDefeat={() => null} />
     </div>
-  {:else if page == "info"}
+  {:else if page === "info"}
     <div class="content" transition:blur>
       <Info
         {colors}
@@ -95,7 +99,7 @@
         }}
       />
     </div>
-  {:else if page == "settings"}
+  {:else if page === "settings"}
     <div class="content" transition:blur>
       <SettingsPage
         {colors}
@@ -103,6 +107,16 @@
           page = "board";
         }}
         {changeColors}
+      />
+    </div>
+  {:else if page === "stats"}
+    <div class="content" transition:blur>
+      <Statistics
+        {colors}
+        currState={state}
+        onClose={() => {
+          page = "board";
+        }}
       />
     </div>
   {/if}

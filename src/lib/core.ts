@@ -61,7 +61,7 @@ export type Statuses = [Status, Status, Status, Status, Status];
 export type ValidGuess = { t: "valid"; guess: string; statuses: Statuses };
 export type GuessResult = { t: "invalid"; guess: string } | ValidGuess;
 
-const startDate = 1642050000;
+const startDate = 1642050000000;
 
 export const allUnknown: Statuses = ["inconnu", "inconnu", "inconnu", "inconnu", "inconnu"];
 
@@ -126,6 +126,53 @@ export const newState = (puzzleNumber?: number | undefined): State => {
   return defaultState;
 };
 
+export const turnsToWin = (s: State): number | null => {
+  if (s.result !== "win") {
+    return null;
+  }
+  return s.lockedGuesses.length;
+};
+
+const greenSquare = "🟩";
+const yellowSquare = "🟨";
+const greySquare = "⬛";
+
+export const statusIntoGridSquare = (s: Status): string => {
+  switch (s) {
+    case "exact":
+      return greenSquare;
+    case "ailleurs":
+      return yellowSquare;
+    case "non":
+    case "inconnu":
+      return greySquare;
+  }
+};
+
+export const rowIntoShareGrid = (r: CommittedRowState): string =>
+  r.result.map(statusIntoGridSquare).join("");
+
+export const stateIntoShareGrid = (s: State): string =>
+  s.lockedGuesses.map(rowIntoShareGrid).join("\n");
+
+export const countWinsByTurn = (): [{ [turns: number]: number }, number] => {
+  let total = 0;
+  let result: { [turns: number]: number } = { 10: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
+  Object.keys(globalThis.localStorage)
+    .filter((it) => it.startsWith("puzzle#"))
+    .map((it) => JSON.parse(localStorage.getItem(it) as string))
+    .map(turnsToWin)
+    .forEach((it) => {
+      if (it === null) {
+        result[10] += 1;
+      } else {
+        result[it] += 1;
+      }
+      total += 1;
+    });
+  return [result, total];
+};
+
 export const isVictory = (s: State): boolean =>
   s.lockedGuesses.length > 0 &&
   s.lockedGuesses[s.lockedGuesses.length - 1].result.every((it) => it === "exact");
@@ -136,7 +183,7 @@ export const isDefeat = (s: State): boolean =>
 
 export function targetForNumber(puzzleNumber: number | undefined): [number, string] {
   const offset = Math.floor((Date.now() - startDate) / 1000 / 60 / 60 / 24);
-  const word = words[offset % words.length];
+  const word = puzzleNumber ? words[puzzleNumber % words.length] : words[offset % words.length];
   return [offset, word];
 }
 
