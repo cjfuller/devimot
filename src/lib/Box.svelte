@@ -131,8 +131,8 @@
   }
   @media screen and (max-width: 400px) {
     .box {
-        font-size: min(24px, var(--font-size)) !important;
-        padding-bottom: 2px;
+      font-size: min(24px, var(--font-size)) !important;
+      padding-bottom: 2px;
     }
   }
 </style>

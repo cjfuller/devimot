@@ -47,9 +47,13 @@
         <button disabled class="button button-disabled" aria-hidden="true" />
         <h1 class="title">Devimot</h1>
         <div>
-          <button class="button" aria-labelledby="stats-label" on:click={() => {
+          <button
+            class="button"
+            aria-labelledby="stats-label"
+            on:click={() => {
               page = "stats";
-          }}>
+            }}
+          >
             <span id="stats-label" hidden>Statistiques</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +92,7 @@
         </div>
       </div>
       <div class="rule" />
-      <Board bind:state={state} {colors} onVictory={() => null} onDefeat={() => null} />
+      <Board bind:state {colors} onVictory={() => null} onDefeat={() => null} />
     </div>
   {:else if page === "info"}
     <div class="content" transition:blur>
