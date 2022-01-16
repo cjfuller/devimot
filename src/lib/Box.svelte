@@ -23,6 +23,9 @@
 
   const handleInput = (e) => {
     let letter = e.target.value;
+    if (letter.length !== 1) {
+        return;
+    }
     if (letter === "" || letter === " ") {
       letter = null;
     }
