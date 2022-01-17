@@ -31,6 +31,9 @@
     }
     letter = letter?.toLowerCase();
     if (letter !== null) {
+      if (!id || document.activeElement !== document.getElementById(id)) {
+        return;
+      }
       onLetterChange(letter);
       const inputs = document.getElementsByTagName("input");
       for (let i = 0; i < inputs.length; i++) {

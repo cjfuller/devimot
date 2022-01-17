@@ -191,7 +191,7 @@ export function commitGuess(guess: ValidGuess, state: State): State {
   const nextState = {
     ...state,
     lockedGuesses: [...state.lockedGuesses, { guess: guess.guess, result: guess.statuses }],
-    currRow: { guess: "", result: null },
+    currRow: { guess: "     ", result: null },
   };
   if (isVictory(nextState)) {
     nextState.result = "win";
