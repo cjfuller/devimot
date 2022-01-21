@@ -246,7 +246,7 @@ export function scoreGuess(guess: string, state: State): GuessResult {
         if (numRemaining > 0) {
           let count = 0;
           for (let j = 0; j < i; j++) {
-            if (target.charAt(j) === thisChar) {
+            if (guess.charAt(j) === thisChar) {
               count += 1;
             }
           }
