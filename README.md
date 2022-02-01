@@ -33,3 +33,5 @@ GNU Affero General Public License for more details.
 SVG icons inline in the code are sourced from [Remix Icon](https://remixicon.com/) and used under the terms of the Apache License 2.0.
 
 The word list is adapted from [freelang](https://www.freelang.com/dictionnaire/dic-francais.php).
+
+Find other non-English wordles [here](https://rwmpelstilzchen.gitlab.io/wordles/).
