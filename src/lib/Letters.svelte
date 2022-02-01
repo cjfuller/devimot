@@ -5,47 +5,8 @@
   export let state: State;
   export let colors: Colors;
 
-  const letters = [
-    "a",
-    "à",
-    "â",
-    "b",
-    "c",
-    "ç",
-    "d",
-    "e",
-    "é",
-    "è",
-    "ê",
-    "ë",
-    "f",
-    "g",
-    "h",
-    "i",
-    "î",
-    "ï",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "ô",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "ù",
-    "û",
-    "ü",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-  ];
+  import {letters} from "./letters";
+
 </script>
 
 <div class="container">

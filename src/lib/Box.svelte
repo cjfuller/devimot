@@ -5,6 +5,7 @@
   export let colors: "standard" | "cb-friendly";
 
   import type { Status } from "./core";
+import { lettersRE } from "./letters";
   export let status: Status = "inconnu";
   export let onLetterChange: (newLetter: string | null) => void;
   export let onClearPrevious: () => void = () => null;
@@ -30,7 +31,7 @@
       letter = null;
     }
     letter = letter?.toLowerCase();
-    if (letter !== null) {
+    if (letter !== null && lettersRE.test(letter)) {
       if (!id || document.activeElement !== document.getElementById(id)) {
         return;
       }
