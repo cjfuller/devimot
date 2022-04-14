@@ -96,6 +96,7 @@ import { lettersRE } from "./letters";
     -webkit-opacity: 1;
     font-family: "Concourse C6 Tab", sans-serif;
     font-size: var(--font-size);
+    padding: 0;
     padding-bottom: var(--tweak);
     min-width: 25px;
     min-height: 25px;
